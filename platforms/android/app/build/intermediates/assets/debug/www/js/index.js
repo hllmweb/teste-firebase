@@ -1,0 +1,159 @@
+document.addEventListener('deviceready', function () {
+    cordova.plugins.backgroundMode.enable();
+    //console.log(cordova.plugins.backgroundMode.isActive());
+    // setInterval(function(){
+        
+    //     hora = new Date();
+
+    //     var horaAtual = hora.getHours()+":"+hora.getMinutes();
+    //     var horaAgenda = document.getElementById("Agendamento").value;
+        
+    //     if(horaAtual == horaAgenda){
+    //         var notificacao = "Chegou o momento tão esperado!!!";
+    //         //alert(notificacao);
+
+    //         var som = device.platform == "Android" ? "file://alarme.mp3" : "file://alarme.caf";
+    //         var dataAtual = new Date();
+    //         cordova.plugins.notification.local.schedule({
+    //             id: 1,
+    //             title: "Notificação de Alarme",
+    //             text: notificacao,
+    //             at: dataAtual,
+    //             sound: som,
+    //             vibrate: true
+    //         });
+
+    //     }
+
+    // }, 10000); //10 segundos fica repetindo até as horas serem diferentes
+    
+    // cordova.plugins.backgroundMode.onactivate = function () {
+    //     // var cont = 0;
+    //     // timer = setInterval(function(){   
+    //     //     cont++; 
+    //     //     console.log("update do modo segundo plano ativo"+cont);    
+    //     //     cordova.plugins.notification.badge.set(cont);
+    //     // }, 10000);
+    //     setInterval(function(){
+    //         alert("ok");
+    //     }, 10000); 
+    // };
+
+    // cordova.plugins.backgroundMode.ondeactivate = function () {
+    //     console.log("modo segundo plano desativado");
+    //     clearInterval(timer);
+    //     cordova.plugins.notification.badge.clear();
+    // };
+
+    // AbrirNotificacao();
+
+    // function AbrirNotificacao(){
+    //     // cordova.plugins.backgroundMode.setDefaults({
+    //     //     title: 'My App',
+    //     //     text: 'You have running service!'
+    //     // });
+
+    //      //console.log(cordova.plugins.backgroundMode.isEnabled()); 
+    //     //console.log(cordova.plugins.backgroundMode.isActive());
+    // }
+  
+
+
+    window.BackgroundService.start(
+       function LoadAlerta(){
+        cordova.plugins.notification.local.schedule({
+            id: 3,
+            title: "Notificação de App Fechado",
+            text: "Texto",
+            //at: dataAtual,
+            trigger: {every: {in: 1, unit: 'second'}, count: 5},
+            sound: som
+        });
+       },function ErroLoadAlerta(){
+           alerta("Esse Foi um erro");
+       }
+    );
+
+},false);
+
+// var app = {
+//     initialize: function() {
+//         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
+//     },
+//     onDeviceReady: function() {
+        
+//         this.receivedEvent('deviceready');
+//         this.inicializarNotificacao();
+//         //alert("Estou vivo!");
+//         // cordova.plugins.autoStart.enable();
+//         // window.cordova.plugins.backgroundMode.enable();
+
+//         // window.cordova.plugins.backgroundMode.on('activate', function () {
+//         //     //setInterval(function () {
+//         //         //this.inicializarNotificacao();
+//         //         console.log("ativo");
+//         //         //cordova.plugins.notification.badge.increase();
+//         //     //}, 1000);
+//         // });
+        
+//         // window.cordova.plugins.backgroundMode.on('deactivate', function () {
+//         //     // var som = device.platform == "Android" ? "file://alarme.mp3" : "file://alarme.caf";
+//         //     // cordova.plugins.notification.local.schedule({
+//         //     //     id: 1,
+//         //     //     title: "Notificação de App Fechado",
+//         //     //     text: "Texto",
+//         //     //     //at: dataAtual,
+//         //     //     trigger: {every: {in: 1, unit: 'second'}, count: 5},
+//         //     //     sound: som
+//         //     // });
+//         //     console.log("desativado");
+//         //     //cordova.plugins.notification.badge.clear();
+//         // });
+        
+        
+      
+//     },
+//     inicializarNotificacao: function(){
+     
+//         setInterval(function(){
+            
+//             hora = new Date();
+
+//             var horaAtual = hora.getHours()+":"+hora.getMinutes();
+//             var horaAgenda = document.getElementById("Agendamento").value;
+            
+//             if(horaAtual == horaAgenda){
+//                 var notificacao = "Chegou o momento tão esperado!!!";
+//                 //alert(notificacao);
+
+//                 var som = device.platform == "Android" ? "file://alarme.mp3" : "file://alarme.caf";
+//                 var dataAtual = new Date();
+//                 cordova.plugins.notification.local.schedule({
+//                     id: 1,
+//                     title: "Notificação de Alarme",
+//                     text: notificacao,
+//                     at: dataAtual,
+//                     sound: som,
+//                     vibrate: true
+//                 });
+
+//             }
+
+//             //cordova.plugins.notification.badge.increase();
+//         }, 3000); //10 segundos fica repetindo até as horas serem diferentes
+//     },
+//     // Update DOM on a Received Event
+//     receivedEvent: function(id) {
+
+//         var parentElement = document.getElementById(id);
+//         var listeningElement = parentElement.querySelector('.listening');
+//         var receivedElement = parentElement.querySelector('.received');
+
+//         listeningElement.setAttribute('style', 'display:none;');
+//         receivedElement.setAttribute('style', 'display:block;');
+
+//         console.log('Received Event: ' + id);
+//     }
+// };
+
+// app.initialize();

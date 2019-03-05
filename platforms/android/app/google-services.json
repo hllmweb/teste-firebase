@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "301073866494",
+    "firebase_url": "https://teste-ac4c4.firebaseio.com",
+    "project_id": "teste-ac4c4",
+    "storage_bucket": "teste-ac4c4.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:301073866494:android:37a74534d9249a42",
+        "android_client_info": {
+          "package_name": "com.teste.br"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "301073866494-02b826ljtp5rq9p5os5ue7lj5nholuo2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDYqD9j-bbNpHavftXWPkJ3D92jGny4IRU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

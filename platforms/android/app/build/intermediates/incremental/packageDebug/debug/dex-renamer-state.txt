@@ -1,0 +1,4 @@
+#Sun Mar 03 12:18:29 AMT 2019
+base.0=/home/hllm/www/apps/teste/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0
+path.0=classes.dex
+renamed.0=classes.dex
